@@ -26,15 +26,14 @@
  * @return {number}
  */
 
+// MEHTOD 1 - FOR LOOP
 var fib = function (n) {
   let sum = 0;
   let num1 = 0;
   let num2 = 1;
 
-  if (n === 0) {
-    sum = 0;
-  } else if (n === 1) {
-    sum = 1;
+  if (n < 2) {
+    return n;
   } else {
     for (let i = 1; i < n; i++) {
       sum = num1 + num2;
@@ -45,3 +44,28 @@ var fib = function (n) {
 
   return sum;
 };
+
+// Time complexity
+// Big-O => O(n) Linear complexity
+
+// METHOD 2 -RECURSIVE METHOD
+var fib = function (n) {
+  if (n < 2) {
+    return n;
+  }
+
+  return fib(n - 1) + fib(n - 2);
+};
+
+// Time complexity
+// Big-O => O(2^n) Recursive
+
+// DRY CODE
+// fib(2) => 1
+// fib(1) + fib(0)
+// 1 + 0
+
+// fib(3) => 2
+// fib(2) + fib(1)
+// fib(1) + fib(0) + 1
+// 1 + 0 + 1
